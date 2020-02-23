@@ -1,6 +1,8 @@
 package company;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Employee {
@@ -10,7 +12,8 @@ public class Employee {
     private String surname;
     private String position;
 
-
+    @ManyToMany
+    private List<Department> departments = new ArrayList<>();
     public Employee() {
     }
 

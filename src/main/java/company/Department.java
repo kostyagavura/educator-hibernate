@@ -12,8 +12,8 @@ public class Department {
     private String name;
     private String address;
     private int floor;
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "DepartamentId")
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable
     private List<Employee> employees = new ArrayList<>();
 
     public Department() {
