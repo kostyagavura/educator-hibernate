@@ -13,6 +13,7 @@ public class Car {
     public void setId(long id) {
         this.id = id;
     }
+
     @Basic(optional = false) // or
     //@Column(nullable = false)
     public String getModel() {

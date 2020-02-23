@@ -2,6 +2,8 @@ package com.bihuniak.educator.basic;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Human {
@@ -10,9 +12,11 @@ public class Human {
     private long id;
     private String firstName;
     private String lastName;
+
     @Embedded
     private Address address;
     private LocalDate birthday;
+    @Embedded
     @Enumerated(value = EnumType.STRING)
     private Sex sex;
 

@@ -10,7 +10,13 @@ public class PostCode {
     public PostCode(String postCode) {
         this.postCode = postCode;
     }
-    public PostCode(){
 
+    public PostCode() {
+
+    }
+
+    @Override
+    public String toString() {
+        return postCode;
     }
 }

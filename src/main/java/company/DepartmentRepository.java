@@ -1,8 +1,8 @@
-package com.bihuniak.educator.basic;
+package company;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface HumanRepository extends CrudRepository<Human, Long> {
+public interface DepartmentRepository extends CrudRepository<Department, Long> {
 }
