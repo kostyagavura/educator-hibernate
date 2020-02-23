@@ -9,16 +9,14 @@ public class Employee {
     private long id;
     private String surname;
     private String position;
-    @OneToOne(cascade = CascadeType.ALL)
-    private Department department;
+
 
     public Employee() {
     }
 
-    public Employee(String surname, String position, Department department) {
+    public Employee(String surname, String position) {
         this.surname = surname;
         this.position = position;
-        this.department = department;
     }
 
     @Override

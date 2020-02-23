@@ -1,6 +1,8 @@
 package company;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Department {
@@ -10,8 +12,9 @@ public class Department {
     private String name;
     private String address;
     private int floor;
-    @OneToOne(cascade = CascadeType.ALL)
-    private Employee employee;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "DepartamentId")
+    private List<Employee> employees = new ArrayList<>();
 
     public Department() {
     }
@@ -23,7 +26,7 @@ public class Department {
     }
 
     public void setEmployee(Employee employee) {
-        this.employee = employee;
+        this.employees.add(employee);
     }
 
     @Override
@@ -32,7 +35,8 @@ public class Department {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
-                ", floor=" + floor + employee+
+                ", floor=" + floor +
+                ", employees=" + employees +
                 '}';
     }
 }

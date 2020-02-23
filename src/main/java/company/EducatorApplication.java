@@ -25,17 +25,21 @@ public class EducatorApplication {
 
 	@PostConstruct
 	public void init() {
-//		Car car = new Car("Passeraty", "WV", 2, 2, true);
-//		myFirstRepository.saveAll(Collections.singletonList(car));
-//		//Human human = new Human("Kostiantyn", "Gavura", new Address("Prudnicka", new PostCode("50-503"),"Wroclaw", "Polska"), LocalDate.of(1987, 2,21), Sex.MALE);
-//
-//		//humanRepository.save(human);
+		Employee e1 = new Employee("First", "Junior");
+		Employee e2 = new Employee("Second", "Middle");
+		Employee e3 = new Employee("Third", "Senior");
+
+
+
 		Department department = new Department("What", "What", 2);
 
-		Employee employee = new Employee("You", "Junior", department);
-		department.setEmployee(employee);
-		employeeRepository.save(employee);
-		System.out.println(employeeRepository.findById(1L).get());
+		department.setEmployee(e1);
+		department.setEmployee(e2);
+		department.setEmployee(e3);
+
+
+		departmentRepository.save(department);
+		System.out.println(departmentRepository.findAll());
 
 	}
 }
